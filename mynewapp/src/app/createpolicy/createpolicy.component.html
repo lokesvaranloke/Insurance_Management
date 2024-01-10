@@ -1,0 +1,76 @@
+<div class="container">
+  <form [formGroup]="createPolicyForm" (ngSubmit)="onSubmit()">
+    <div class="row g-0">
+      <div class="col-head text-center p-1">
+        <span class="fs-3">Create Policy</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="policyType" class="form-label"></label>
+        <textarea
+          type="text"
+          class="form-control"
+          id="policyType"
+          placeholder="Policy Type"
+          formControlName="policyType"
+        ></textarea>
+        <span
+          style="color: red"
+          class="small"
+          *ngIf="
+            !createPolicyForm.get('policyType').valid &&
+            createPolicyForm.get('policyType').touched
+          "
+          ><small>*Please enter a valid policy type</small></span
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="policyNum" class="form-label"></label>
+        <input
+          type="text"
+          class="form-control"
+          id="policyNum"
+          placeholder="Policynumber"
+          formControlName="policyNum"
+          [disabled]="true"
+        />
+        <span
+          style="color: red"
+          class="small"
+          *ngIf="
+            !createPolicyForm.get('policyNum').valid &&
+            createPolicyForm.get('policyNum').touched
+          "
+          ><small>*Please enter a 10 digit policy number</small></span
+        >
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <label for="approval" class="form-label"></label>
+        <input
+          type="number"
+          class="form-control"
+          id="approval"
+          placeholder="Approval"
+          formControlName="approval"
+          [disabled]="true"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <button
+          class="btn btn-primary w-100 mt-1"
+          type="submit"
+          [disabled]="!createPolicyForm.valid"
+        >
+          Create
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

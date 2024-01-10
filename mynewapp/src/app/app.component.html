@@ -1,0 +1,60 @@
+<div class="container dispaly">
+  <div style="text-align: center">
+    <h2>Insurance Policy Management</h2>
+    <hr />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="nav nav-tabs">
+          <li>
+            <div id="home" class="dropdown">
+              <button class="dropbtn" routerLink="/">Home</button>
+            </div>
+            <div id="home" class="dropdown">
+              <button class="dropbtn" routerLink="/login">User</button>
+            </div>
+            <div id="admin" class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                routerLink="/admin-login"
+              >
+                Admin
+              </button>
+              <div class="dropdown-content">
+                <a class="nav-link" routerLink="/viewallcustomers"
+                  >View customers</a
+                >
+                <a class="nav-link" routerLink="/createpolicy">Create Policy</a>
+
+                <a class="nav-link" routerLink="/policycrud">Policy page</a>
+                <a class="nav-link" routerLink="/approvepolicy"
+                  >Approve policy</a
+                >
+                <a class="nav-link" routerLink="/viewqueries">View Queries</a>
+              </div>
+            </div>
+            <div class="d-block mr-0 ml-auto" style="float: right">
+              <button class="btn" routerLink="/aboutus">About</button>
+              <button class="btn" routerLink="/contactus">Contact</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div style="margin: 10px">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
